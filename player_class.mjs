@@ -9,11 +9,7 @@ class Player
 
     }
 
-    sayName()
-    {
-        console.log('dsafefdgefgrewr');
-    }
-    
+   
 }
 
 export default Player;

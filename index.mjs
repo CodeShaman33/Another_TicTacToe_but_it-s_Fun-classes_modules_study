@@ -1,28 +1,27 @@
 
-
-
-
-
-import {arr  as ee} from './data.mjs'
-import Player from './player_class.mjs';
+import getLayout from "./html-structure.mjs";
 import Game from './game_class.mjs';
-import getLayout from './html-structure.mjs';
+import Player from './player_class.mjs';
 
 
 
 
 
 
-
-
-
-
+//setting up Layout
 getLayout();
-let playerX = new Player('X');
-console.log(playerX.sayName())
 
-let newGame = new Game(playerX);
-newGame.sayNameX();
+//creating players 
+const playerX = new Player("X");
+const playerO = new Player("O");
+
+
+//creating new game 
+const game = new Game(playerX, playerO);
+game.displayBoard();
+
+
+
 
 
 

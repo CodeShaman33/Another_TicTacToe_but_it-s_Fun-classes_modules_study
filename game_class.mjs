@@ -1,34 +1,54 @@
+import { cells } from "./data.mjs";
 
-class Game
-{
-    constructor(PlayerX, PlayerO)
-    {
+
+class Game {
+    constructor(PlayerX, PlayerO) {
+        //players objcts from other class
         this.PlayerX = PlayerX;
+        this.PlayerO = PlayerO;
+        this.cells = cells;
+
+
+
         this.running = false;
-        this.addBtnListener();
 
         this.currentPlayer = this.PlayerX;
-        
+
+        //run functions 
+        this.listener1();
+
+
+
     }
 
-    sayNameX() {
-        console.log(this.PlayerX.name);
-      }
-    
-      addBtnListener() {
-        document.getElementById("startBtn").addEventListener("click", this.startGame);
-      }    
-    startGame()
-    {
-        document.getElementById('container').style.display = 'none';
-        this.running = true;
+    displayBoard() {
+        let div = document.getElementById("testDiv");
+        div.innerHTML = `ITS ${this.currentPlayer.name}'S TURN`;
+
+
     }
 
-    clicked()
+    listener1() {
+        cells.forEach(cell => {
+            cell.addEventListener("click", () => 
+            {
+                cell.classList.add(this.currentPlayer.name);
+                this.changePlayer();
+                this.displayBoard();
+
+            });
+
+        })
+    }
+
+    changePlayer()
     {
         this.currentPlayer = this.currentPlayer === this.PlayerX? this.PlayerO : this.PlayerX;
-        
     }
+
+
+
+
 }
 
 export default Game;
