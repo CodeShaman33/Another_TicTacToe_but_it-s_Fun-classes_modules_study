@@ -21,3 +21,18 @@
   font-size: 30px;
   text-align: center;
 }
+
+.footer, #testDiv
+{
+  background-color: #c90e6b;
+  color: rgb(23, 3, 59);
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  font-size: 40px;
+}
+
+.grid-item.clicked
+{
+  background-color: rgba(209, 35, 35, 0.8);
+}
